@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MsgService.dto;
+using MsgService.Units;
 
 namespace MsgService
 {
@@ -43,41 +45,18 @@ namespace MsgService
             #region consul 注册服务
             string ip = Configuration["ip"];
             int port = Convert.ToInt32(Configuration["port"]);
-
             string serviceName = "MsgService";
             string serviceId = serviceName + Guid.NewGuid();
-            using (var client = new ConsulClient(a =>
+            ServiceEntity serviceEntity = new ServiceEntity
             {
-                a.Address = new Uri("http://127.0.0.1:8500");
-                a.Datacenter = "dc1";
-            }))
-            {
-                client.Agent.ServiceRegister(new AgentServiceRegistration()
-                {
-                    ID = serviceId,
-                    Name = serviceName,
-                    Address = ip,
-                    Port = port,
-                    Check = new AgentServiceCheck
-                    {
-                        DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(5),//服务停止多久后反注册(注销)
-                        Interval = TimeSpan.FromSeconds(10),//健康检查时间间隔，或者称为心跳间隔
-                        HTTP = $"http://{ip}:{port}/api/health",//健康检查地址
-                        Timeout = TimeSpan.FromSeconds(5)
-                    }
-                }).Wait();
-            }
-            hostApplicationLifetime.ApplicationStopped.Register(() =>
-            {
-                using (var client = new ConsulClient(a =>
-                {
-                    a.Address = new Uri("http://127.0.0.1:8500");
-                    a.Datacenter = "dc1";
-                }))
-                {
-                    client.Agent.ServiceDeregister(serviceId).Wait();
-                }
-            });
+                IP = ip,
+                Port = port,
+                ServiceName = serviceName,
+                ServiceId = serviceId,
+                ConsulIP = "127.0.0.1",
+                ConsulPort = 8500,
+            };
+            app.RegisterConsul(hostApplicationLifetime, serviceEntity);
             #endregion
 
 

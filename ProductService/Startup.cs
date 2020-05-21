@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ProductService.dto;
+using ProductService.Units;
 
 namespace ProductService
 {
@@ -28,7 +30,7 @@ namespace ProductService
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime hostApplicationLifetime)
         {
             if (env.IsDevelopment())
             {
@@ -38,6 +40,23 @@ namespace ProductService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            #region consul ×¢²á·þÎñ
+            string ip = Configuration["ip"];
+            int port = Convert.ToInt32(Configuration["port"]);
+            string serviceName = "ProductService";
+            string serviceId = serviceName + Guid.NewGuid();
+            ServiceEntity serviceEntity = new ServiceEntity
+            {
+                IP = ip,
+                Port = port,
+                ServiceName = serviceName,
+                ServiceId = serviceId,
+                ConsulIP = "127.0.0.1",
+                ConsulPort = 8500,
+            };
+            app.RegisterConsul(hostApplicationLifetime, serviceEntity);
+            #endregion
 
             app.UseEndpoints(endpoints =>
             {
