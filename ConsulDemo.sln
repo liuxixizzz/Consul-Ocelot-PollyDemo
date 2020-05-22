@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsgService", "MsgService\Ms
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductService", "ProductService\ProductService.csproj", "{DE57CDC3-1F44-4000-821F-626226F0E534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{0BDFADDE-79DD-4C5C-A335-E485971BEA45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer", "Consumer\Consumer.csproj", "{0BDFADDE-79DD-4C5C-A335-E485971BEA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollyTest", "PollyTest\PollyTest.csproj", "{1843CFCF-8A3B-4CDA-9ED4-11C3F794C29B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0BDFADDE-79DD-4C5C-A335-E485971BEA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BDFADDE-79DD-4C5C-A335-E485971BEA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BDFADDE-79DD-4C5C-A335-E485971BEA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1843CFCF-8A3B-4CDA-9ED4-11C3F794C29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1843CFCF-8A3B-4CDA-9ED4-11C3F794C29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1843CFCF-8A3B-4CDA-9ED4-11C3F794C29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1843CFCF-8A3B-4CDA-9ED4-11C3F794C29B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
