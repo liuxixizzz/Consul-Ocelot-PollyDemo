@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MsgService.dto;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,13 @@ namespace MsgService.Controllers
     [Route("api/[controller]")]
     public class SMSController
     {
+        private readonly ILogger<SMSController> _logger;
+        public SMSController(ILogger<SMSController> logger)
+        {
+            _logger = logger;
+        }
+
+
         //发请求，报文体为{phoneNum:"110",msg:"aaaaaaaaaaaaa"}，
         [HttpPost(nameof(Send_MI))]
         public void Send_MI(dynamic model)
@@ -21,6 +29,7 @@ namespace MsgService.Controllers
         public void Send_LX(SendSMSRequest model)
         {
             Console.WriteLine($"通过联想短信接口向{model.PhoneNum}发送短信{model.Msg}");
+            _logger.LogInformation($"通过小米短信接口向{model.PhoneNum}发送短信{model.Msg}");
         }
         [HttpPost(nameof(Send_HW))]
         public void Send_HW(SendSMSRequest model)

@@ -1,0 +1,237 @@
+2020-05-26 10:17:01.096 +08:00 [FTL] Application startup exception
+System.AggregateException: One or more errors occurred. (由于目标计算机积极拒绝，无法连接。)
+ ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。
+ ---> System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Consul.PutRequest`1.Execute(CancellationToken ct)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MsgService.Units.AppBuilderExtensions.RegisterConsul(IApplicationBuilder app, IHostApplicationLifetime hostApplicationLifetime, ServiceEntity serviceEntity) in D:\vsProject\ConsulDemo\MsgService\Units\AppBuilderExtensions.cs:line 15
+   at MsgService.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime hostApplicationLifetime) in D:\vsProject\ConsulDemo\MsgService\Startup.cs:line 59
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__2(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2020-05-26 10:17:23.181 +08:00 [FTL] Unable to start Kestrel.
+System.IO.IOException: Failed to bind to address http://[::]:80: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+ ---> System.Net.Sockets.SocketException (10048): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass21_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.AnyIPListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2020-05-26 10:18:03.696 +08:00 [FTL] Application startup exception
+System.InvalidOperationException: No application configured. Please specify an application via IWebHostBuilder.UseStartup, IWebHostBuilder.Configure, or specifying the startup assembly via StartupAssemblyKey in the web host configuration.
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2020-05-26 10:18:26.027 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:18:26.178 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:18:26.179 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:18:26.180 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:18:28.551 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:18:28.785 +08:00 [INF] Request finished in 236.2552ms 404 
+2020-05-26 10:21:06.927 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:21:06.954 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:21:07.045 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:21:07.067 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_MI (MsgService) in 11.2173ms
+2020-05-26 10:21:07.074 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:21:07.079 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Serilog.ILogger' while attempting to activate 'MsgService.Controllers.SMSController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-26 10:21:07.224 +08:00 [INF] Request finished in 297.5033ms 500 text/plain
+2020-05-26 10:22:24.225 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:22:24.231 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:22:24.233 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:22:24.236 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_MI (MsgService) in 0.7986000000000001ms
+2020-05-26 10:22:24.238 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:22:24.239 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Serilog.ILogger' while attempting to activate 'MsgService.Controllers.SMSController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-26 10:22:24.255 +08:00 [INF] Request finished in 30.906100000000002ms 500 text/plain
+2020-05-26 10:23:09.496 +08:00 [INF] Application is shutting down...
+2020-05-26 10:26:16.820 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:26:16.932 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:26:16.933 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:26:16.934 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:26:19.393 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:26:19.745 +08:00 [INF] Request finished in 356.2696ms 404 
+2020-05-26 10:26:21.856 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:26:21.894 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:26:21.967 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:26:21.982 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_MI (MsgService) in 4.6187000000000005ms
+2020-05-26 10:26:21.987 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:26:21.992 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Serilog.ILogger' while attempting to activate 'MsgService.Controllers.SMSController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-26 10:26:22.099 +08:00 [INF] Request finished in 243.72080000000003ms 500 text/plain
+2020-05-26 10:28:41.289 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:28:41.388 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:28:41.388 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:28:41.389 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:28:43.472 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:28:43.528 +08:00 [INF] Request finished in 59.301500000000004ms 404 
+2020-05-26 10:29:03.818 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:29:03.917 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:29:03.918 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:29:03.919 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:29:06.729 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:29:06.740 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:29:06.861 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:29:06.904 +08:00 [INF] Request finished in 242.8433ms 404 
+2020-05-26 10:29:07.012 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:29:07.040 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_MI (MsgService) in 4.384ms
+2020-05-26 10:29:07.130 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:29:07.139 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Serilog.ILogger' while attempting to activate 'MsgService.Controllers.SMSController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-26 10:29:07.384 +08:00 [INF] Request finished in 644.6543ms 500 text/plain
+2020-05-26 10:32:32.913 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:32:33.041 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:32:33.042 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:32:33.043 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:32:35.575 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:32:35.640 +08:00 [INF] Request finished in 69.0115ms 404 
+2020-05-26 10:32:50.818 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:32:50.920 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:32:50.922 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:32:50.924 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:32:53.542 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:32:53.614 +08:00 [INF] Request finished in 77.91680000000001ms 404 
+2020-05-26 10:32:56.952 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:32:56.985 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:32:57.043 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:32:57.054 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_MI (MsgService) in 3.1783ms
+2020-05-26 10:32:57.061 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:32:57.069 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'MsgService.Controllers.SMSController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-26 10:32:57.184 +08:00 [INF] Request finished in 232.2465ms 500 text/plain
+2020-05-26 10:39:36.240 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:39:36.379 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:39:36.380 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:39:36.381 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:39:38.290 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:39:38.357 +08:00 [INF] Request finished in 72.3711ms 404 
+2020-05-26 10:39:40.694 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:39:40.733 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:39:40.801 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:39:40.814 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_MI (MsgService) in 3.5927000000000002ms
+2020-05-26 10:39:40.825 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:39:40.830 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Serilog.ILogger' while attempting to activate 'MsgService.Controllers.SMSController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-26 10:39:40.961 +08:00 [INF] Request finished in 265.45120000000003ms 500 text/plain
+2020-05-26 10:42:48.411 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:42:48.528 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:42:48.539 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:42:48.542 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:42:50.630 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:42:50.687 +08:00 [INF] Request finished in 61.112ms 404 
+2020-05-26 10:42:52.503 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_MI application/json 37
+2020-05-26 10:42:52.541 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_MI (MsgService)'
+2020-05-26 10:42:52.608 +08:00 [INF] Route matched with {action = "Send_MI", controller = "SMS"}. Executing controller action with signature Void Send_MI(System.Object) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:46:30.255 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-26 10:46:30.352 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-26 10:46:30.353 +08:00 [INF] Hosting environment: Development
+2020-05-26 10:46:30.354 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-26 10:46:32.815 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-26 10:46:32.931 +08:00 [INF] Request finished in 120.7211ms 404 
+2020-05-26 10:46:43.990 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:8001/api/SMS/Send_LX application/json 37
+2020-05-26 10:46:44.042 +08:00 [INF] Executing endpoint 'MsgService.Controllers.SMSController.Send_LX (MsgService)'
+2020-05-26 10:46:44.133 +08:00 [INF] Route matched with {action = "Send_LX", controller = "SMS"}. Executing controller action with signature Void Send_LX(MsgService.dto.SendSMSRequest) on controller MsgService.Controllers.SMSController (MsgService).
+2020-05-26 10:46:44.177 +08:00 [INF] 通过小米短信接口向123456发送短信msg
+2020-05-26 10:46:44.186 +08:00 [INF] Executed action MsgService.Controllers.SMSController.Send_LX (MsgService) in 41.9162ms
+2020-05-26 10:46:44.192 +08:00 [INF] Executed endpoint 'MsgService.Controllers.SMSController.Send_LX (MsgService)'
+2020-05-26 10:46:44.194 +08:00 [INF] Request finished in 204.3552ms 200 

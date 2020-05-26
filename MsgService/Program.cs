@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Events;
 
 namespace MsgService
 {
@@ -13,6 +15,7 @@ namespace MsgService
     {
         public static void Main(string[] args)
         {
+            SerilogConfig();
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -26,7 +29,17 @@ namespace MsgService
                .ConfigureWebHostDefaults(webBuilder =>
                {
                    webBuilder.UseStartup<Startup>().UseUrls($"http://{ip}:{port}");
-               });
+               }).UseSerilog();
         }
+        private static void SerilogConfig()
+        {
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+            .Enrich.FromLogContext()
+            .WriteTo.File(@"logs\log.txt", rollingInterval: RollingInterval.Day)
+            .WriteTo.Console()
+            .CreateLogger();
+        }
+
     }
 }
