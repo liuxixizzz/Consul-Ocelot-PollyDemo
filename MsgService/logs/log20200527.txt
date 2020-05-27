@@ -1,0 +1,86 @@
+2020-05-27 15:32:05.335 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-27 15:32:05.431 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-27 15:32:05.432 +08:00 [INF] Hosting environment: Development
+2020-05-27 15:32:05.433 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-27 15:32:07.894 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/weatherforecast  
+2020-05-27 15:33:06.168 +08:00 [INF] Request finished in 58277.5397ms 404 
+2020-05-27 15:33:11.205 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger  
+2020-05-27 15:33:11.212 +08:00 [INF] Request finished in 6.5277ms 301 
+2020-05-27 15:33:11.217 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/index.html  
+2020-05-27 15:33:11.261 +08:00 [INF] Request finished in 43.759800000000006ms 200 text/html;charset=utf-8
+2020-05-27 15:33:11.307 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/swagger-ui-standalone-preset.js  
+2020-05-27 15:33:11.307 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/swagger-ui-bundle.js  
+2020-05-27 15:33:11.307 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/swagger-ui.css  
+2020-05-27 15:33:11.381 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-05-27 15:33:11.388 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-05-27 15:33:11.432 +08:00 [INF] Request finished in 124.89540000000001ms 200 text/css
+2020-05-27 15:33:11.432 +08:00 [INF] Request finished in 125.03840000000001ms 200 application/javascript
+2020-05-27 15:33:11.439 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-05-27 15:33:11.440 +08:00 [INF] Request finished in 133.01680000000002ms 200 application/javascript
+2020-05-27 15:33:11.587 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/swagger-ui-bundle.js.map  
+2020-05-27 15:33:11.590 +08:00 [INF] Request finished in 2.5225ms 404 
+2020-05-27 15:33:11.593 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger/swagger-ui-bundle.js.map  
+2020-05-27 15:33:11.594 +08:00 [INF] Request finished in 1.4297ms 404 
+2020-05-27 15:33:11.744 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-27 15:33:11.745 +08:00 [INF] Request finished in 1.7825000000000002ms 404 
+2020-05-27 15:33:11.748 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger/swagger-ui-standalone-preset.js.map  
+2020-05-27 15:33:11.749 +08:00 [INF] Request finished in 1.0939ms 404 
+2020-05-27 15:33:11.880 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/v1/swagger.json  
+2020-05-27 15:33:12.100 +08:00 [INF] Request finished in 219.785ms 200 application/json;charset=utf-8
+2020-05-27 15:39:47.672 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-27 15:39:47.763 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-27 15:39:47.764 +08:00 [INF] Hosting environment: Development
+2020-05-27 15:39:47.765 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-27 15:39:49.884 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/  
+2020-05-27 15:39:50.048 +08:00 [INF] Request finished in 165.8951ms 301 
+2020-05-27 15:39:50.093 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/index.html  
+2020-05-27 15:39:50.139 +08:00 [INF] Request finished in 45.5629ms 200 text/html;charset=utf-8
+2020-05-27 15:39:50.176 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js  
+2020-05-27 15:39:50.177 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js  
+2020-05-27 15:39:50.177 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui.css  
+2020-05-27 15:39:50.282 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-05-27 15:39:50.283 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-05-27 15:39:50.283 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-05-27 15:39:50.292 +08:00 [INF] Request finished in 115.7788ms 200 application/javascript
+2020-05-27 15:39:50.314 +08:00 [INF] Request finished in 136.5239ms 200 application/javascript
+2020-05-27 15:39:50.315 +08:00 [INF] Request finished in 137.8838ms 200 text/css
+2020-05-27 15:39:50.528 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js.map  
+2020-05-27 15:39:50.565 +08:00 [INF] Request finished in 37.6333ms 404 
+2020-05-27 15:39:50.577 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-bundle.js.map  
+2020-05-27 15:39:50.587 +08:00 [INF] Request finished in 9.512ms 404 
+2020-05-27 15:39:50.760 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js.map  
+2020-05-27 15:39:50.762 +08:00 [INF] Request finished in 2.7518000000000002ms 404 
+2020-05-27 15:39:50.766 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-standalone-preset.js.map  
+2020-05-27 15:39:50.769 +08:00 [INF] Request finished in 2.9394ms 404 
+2020-05-27 15:39:50.879 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/v1/swagger.json  
+2020-05-27 15:39:50.932 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/favicon-32x32.png  
+2020-05-27 15:39:50.938 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-05-27 15:39:50.941 +08:00 [INF] Request finished in 9.337200000000001ms 200 image/png
+2020-05-27 15:39:51.062 +08:00 [INF] Request finished in 182.8005ms 200 application/json;charset=utf-8
+2020-05-27 15:42:51.674 +08:00 [INF] Now listening on: http://localhost:8001
+2020-05-27 15:42:51.767 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-27 15:42:51.768 +08:00 [INF] Hosting environment: Development
+2020-05-27 15:42:51.769 +08:00 [INF] Content root path: D:\vsProject\ConsulDemo\MsgService
+2020-05-27 15:42:54.125 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/  
+2020-05-27 15:42:54.274 +08:00 [INF] Request finished in 156.9789ms 301 
+2020-05-27 15:42:54.329 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/index.html  
+2020-05-27 15:42:54.378 +08:00 [INF] Request finished in 48.935300000000005ms 200 text/html;charset=utf-8
+2020-05-27 15:42:54.435 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js  
+2020-05-27 15:42:54.435 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js  
+2020-05-27 15:42:54.435 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui.css  
+2020-05-27 15:42:54.580 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-05-27 15:42:54.580 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-05-27 15:42:54.580 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-05-27 15:42:54.612 +08:00 [INF] Request finished in 177.269ms 200 application/javascript
+2020-05-27 15:42:54.612 +08:00 [INF] Request finished in 177.2641ms 200 application/javascript
+2020-05-27 15:42:54.613 +08:00 [INF] Request finished in 179.3768ms 200 text/css
+2020-05-27 15:42:54.792 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-bundle.js.map  
+2020-05-27 15:42:54.822 +08:00 [INF] Request finished in 29.768800000000002ms 404 
+2020-05-27 15:42:54.825 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-bundle.js.map  
+2020-05-27 15:42:54.826 +08:00 [INF] Request finished in 1.4038000000000002ms 404 
+2020-05-27 15:42:55.012 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger-ui-standalone-preset.js.map  
+2020-05-27 15:42:55.015 +08:00 [INF] Request finished in 2.7277ms 404 
+2020-05-27 15:42:55.019 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:8001/swagger-ui-standalone-preset.js.map  
+2020-05-27 15:42:55.021 +08:00 [INF] Request finished in 2.6241000000000003ms 404 
+2020-05-27 15:42:55.154 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:8001/swagger/v1/swagger.json  
+2020-05-27 15:42:55.369 +08:00 [INF] Request finished in 215.5764ms 200 application/json;charset=utf-8

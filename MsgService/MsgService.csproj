@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp3.0\MsgService.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <OutputPath>bin\Debug\netcoreapp3.0</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
